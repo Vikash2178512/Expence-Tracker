@@ -1,0 +1,16 @@
+<%- include("header.ejs")%>
+<link rel="stylesheet" href="./stylesheets/resister.css">
+  <div id="main">
+  <form action="/resister" method="post">
+    <h1>Create A New Account</h1>
+    <input type="text" name="username" placeholder="Enter Username"><br><br>
+    <input type="email" name="email" placeholder="Enter email"><br><br>
+    <input type="password" name="password" placeholder="Enter password"><br><br>
+    <button>Submit</button>  <br>
+    <h2>_______Or________</h2>
+    <h2>If ! Already Have An Account</h2><br>
+    <a href="/login">Login </a>
+  </form>
+</div>
+
+  <%- include("footer.ejs")%>

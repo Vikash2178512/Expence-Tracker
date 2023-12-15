@@ -1,0 +1,20 @@
+
+    <%- include("header.ejs")%>
+    <link rel="stylesheet" href="/stylesheets/login.css">
+<div id="main">
+    <form action="/update/<%=data._id%>" method="post">
+       <h1>Update Your  <br> Expence  Details</h1>
+        <input value="<%=data.title%>"  type="text" name="title" placeholder="Enter title"> <br><br>
+        <input value="<%=data.amount%>" type="number" name="amount" placeholder="Enter amount"> <br><br>
+        <select  id="category-select" name="category">
+            <option value="Food & Beverage">Food & Beverage</option>
+            <option value="Rent">Rent</option>
+            <option value="Transport">Transport</option>
+            <option value="Relaxing">Relaxing</option>
+        </select><br><br>
+        <input value="<%=data.caption%>" type="text" name="caption" placeholder="Enter caption"> <br><br>
+        <input value="<%=data.date%>" type="date" name="date" placeholder="Enter date"> <br><br>
+        <button>Update-Expence</button>
+     </form>
+    </div>
+     <%- include("footer.ejs")%>

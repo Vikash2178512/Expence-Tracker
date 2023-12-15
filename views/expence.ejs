@@ -1,0 +1,49 @@
+
+    <%- include("header.ejs")%>
+<link rel="stylesheet" href="./stylesheets/expence.css">
+<nav>
+  <img src="https://imgs.search.brave.com/Wgk3KRM2cZ_esAwMb2YDhkXlhzI2LshjvtfSLHctsT8/rs:fit:500:0:0/g:ce/aHR0cHM6Ly9sb2dv/ZGl4LmNvbS9sb2dv/LzE3Mjc1NDIucG5n" alt="">
+  <h1><%=admin.username%></h1>
+</nav>
+   <div id="main">
+    <a id="Addexpence" href="/homepage">Add New Expence</a>
+        <div class="expenses-list">
+          <h2>Expenses List</h2>
+          <h1>Total:<%= posts.reduce((av,cv)=>av+cv.amount,0) %></h1><br>
+          <form action="/filter">
+            <select name="key">
+              <option value="amount">amount</option>
+              <option value="title">title</option>
+              <option value="category">category</option>
+              <option value="caption">caption</option>
+              <option value="date">date</option>
+            </select>
+            <input type="text" name="value" placeholder="enter your search turn">
+            <button>filter</button>
+            <a href="/expence">Clear Filter</a>
+          </form><br>
+          <table>
+              <thead>
+                  <tr>
+                      <th>Title</th>
+                      <th>Amount</th>
+                      <th>Category</th>
+                      <th>Caption</th>
+                      <th>Date</th>
+                      <th>Delete</th>
+                      <th>Update</th>
+                  </tr>
+              </thead>
+              <tbody id="expnese-table-body">
+                <% posts.forEach(function(e, i){ %>
+                 <td><%= e.title %></td>
+                 <td><%= e.amount %></td>
+                 <td><%= e.category %></td>
+                 <td><%= e.caption %></td>
+                 <td><%= e.date %></td>
+                 <td><a href="/delete/<%=e._id%>">delete</a></td>
+                 <td><a href="/update/<%=e._id%>">update</a></td>
+              </tbody>
+     <%}) %>
+   </div>
+ <%- include("footer.ejs")%>

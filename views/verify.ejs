@@ -1,0 +1,9 @@
+<%- include("header.ejs")%>
+  <h1>forget page Page</h1>
+  <form action="/forget/<%= id%>" method="post">
+    <input type="number" name="token" placeholder="otp here....">
+    <input type="password" name="newpassword" placeholder="Enter New password"><br><br>
+    <button>Set password</button>
+  </form>
+
+  <%- include("footer.ejs")%>

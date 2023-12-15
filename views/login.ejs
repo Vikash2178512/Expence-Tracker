@@ -1,0 +1,16 @@
+<%- include("header.ejs")%>
+<link rel="stylesheet" href="./stylesheets/login.css">
+  <div id="main">
+  <form action="/login" method="post">
+    <h1>Login Here</h1>
+    <input type="text" name="username" placeholder="Enter Username"><br><br>
+    <input type="password" name="password" placeholder="Enter password"><br><br>
+    <button>Login</button>
+    <a id="forget" href="/forget">forgot password</a> <br>
+    <h2>_______Or________</h2>
+    <h2>If ! You Have'nt An Account</h2>
+    <h2>Create A new Account</h2><br>
+    <a href="/">Sign-Up </a>
+  </form>
+</div>
+  <%- include("footer.ejs")%>
